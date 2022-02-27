@@ -1,0 +1,28 @@
+.progress {
+  height: 250px;
+  width: 350px;
+
+  margin: 2em 0;
+  .btn__wpr {
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+.mat-card {
+  border-radius: 0px;
+}
+@media screen and(max-width:600px) {
+  .progress {
+    margin: 0;
+  }
+}
+// .mat-tab,
+// .mat-tab-group {
+//   max-width: 1000px !important;
+// }
+// @media screen and(max-width:600px) {
+//   .mat-tab,
+//   .mat-tab-group {
+//     width: 100% !important;
+//   }
+// }

@@ -1,0 +1,45 @@
+.wpr {
+  height: calc(100vh - 9vh);
+
+  .login {
+    height: 400px;
+    .mat-form-field {
+      min-width: 300px !important;
+    }
+    .btn__wpr {
+      width: 100%;
+    }
+  }
+}
+.with-radial-gradient {
+  border-radius: 19px;
+
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 0 6px 0 rgba(217, 6, 224, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(45deg, #0c171ab9, #03ad20);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset;
+
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
+}
+.date_container {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[_nghost-slr-c155] .mat-list-item-content {
+  padding: 0 0 !important;
+}

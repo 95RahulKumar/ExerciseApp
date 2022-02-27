@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="center" style="margin-top: 2em;">
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="New-Tranings">
+
+            <div *ngIf="startTraining" fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
+
+                <img src="\assets\image\3.png.gif" style="height:350px;width:350px;">
+
+                <div fxLayout="column" fxLayoutAlign="center center" class="progress" fxFlex.xs="100%">
+                    <mat-spinner mode="determinate" [value]="value" offset="5">
+
+                    </mat-spinner>
+                    <p>{{value}}%</p>
+                    <p *ngIf="motivation">Keep it up u can do </p>
+                    <p *ngIf="timeUp">Time Up</p>
+                    <div class="btn__wpr" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px"
+                        fxFlex.xs="100%">
+                        <button mat-stroked-button (click)="start()" matTooltip="Click To Start Exercise"
+                            matTooltipPosition="below" [disabled]="stopEx">start</button>
+
+                        <button mat-stroked-button (click)="stop()" matTooltip="Click To Stop Exercise"
+                            matTooltipPosition="below">stop</button>
+                    </div>
+                </div>
+
+            </div>
+            <app-resister *ngIf="!startTraining" (showEvent)="setvalue($event)">
+            </app-resister>
+        </mat-tab>
+        <mat-tab label="Past-Trainings">
+
+        </mat-tab>
+
+    </mat-tab-group>
+</div>
