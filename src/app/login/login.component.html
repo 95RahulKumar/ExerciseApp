@@ -1,31 +1,37 @@
 <div fxFlex fxLayoutAlign="center center" class="wpr">
-    <div class="login" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="5px">
+    <div>
         <h1 style="padding: 1em;">Login</h1>
-        <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput required>
-            <mat-hint>Name can`t be empty</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker" required>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            <mat-hint>Date can`t be empty</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-hint>Password must be at least shoud be 8 charector</mat-hint>
-        </mat-form-field>
-        <div class="btn__wpr">
-            <a class="with-radial-gradient" type=reset href="#">Clear</a>
-            <div fxFlex></div>
-            <a class="with-radial-gradient" href="#">Submit</a>
-        </div>
+
+        <form [formGroup]="userForm" class="login" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="5px"
+            (ngSubmit)="submit()">
+            <mat-form-field appearance="outline">
+                <mat-label>email</mat-label>
+                <input matInput required formControlName='email'>
+                <!-- <mat-hint>Name can`t be empty</mat-hint> -->
+                <mat-error *ngIf="userForm.controls.email.status=='INVALID' && userForm.controls.email.touched==true">
+                    Please
+                    enter a valid email</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required formControlName='password'>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                </button>
+                <!-- <mat-hint>Password must be at least shoud be 8 charector</mat-hint> -->
+                <mat-error
+                    *ngIf="userForm.controls.password.status=='INVALID' && userForm.controls.password.touched==true">
+                    Please enter a valid password</mat-error>
+            </mat-form-field>
+            <div class="btn__wpr">
+                <button class="with-radial-gradient" type=reset>Clear</button>
+                <div fxFlex></div>
+                <button class="with-radial-gradient" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 </div>

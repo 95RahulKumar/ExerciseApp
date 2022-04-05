@@ -47,6 +47,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { ErrorComponent } from './error/error.component';
 import { ResisterComponent } from './resister/resister.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +96,9 @@ import { DialogComponent } from './dialog/dialog.component';
     MatToolbarModule,
     MatTooltipModule,
     CdkTableModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
